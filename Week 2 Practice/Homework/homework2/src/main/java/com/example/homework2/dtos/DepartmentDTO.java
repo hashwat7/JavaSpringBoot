@@ -1,5 +1,6 @@
 package com.example.homework2.dtos;
 
+import com.example.homework2.annotations.PrimeOrNotValidation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
@@ -14,6 +15,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DepartmentDTO {
+    @PrimeOrNotValidation
+    private Long prime;
     private  Long id;
     @NotBlank(message = "Title is required & can't be blank")
     @Size(min = 4, max = 15, message = "Tittle size should range between 4 to 15")
